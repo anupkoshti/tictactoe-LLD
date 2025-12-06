@@ -1,5 +1,6 @@
 package org.pm.commands.implementations;
 
+import org.pm.events.Event;
 import org.pm.game.User;
 
 public class SMSCommand {
@@ -8,6 +9,11 @@ public class SMSCommand {
      String link;
      String template;
 
+    public SMSCommand(Event event) {
+        this.notificationDetails = new NotificationDetails(event.getUser(), event.getMessage());
+    }
+
+    // Constructor for builder pattern
     public SMSCommand(NotificationDetails notificationDetails) {
         this.notificationDetails = notificationDetails;
     }

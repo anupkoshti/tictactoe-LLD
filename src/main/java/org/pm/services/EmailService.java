@@ -8,7 +8,8 @@ public class EmailService {
         //todo: mail is sent
     }
 
-    public void send(EmailCommand sendEmailCommand) {
+    public Void send(EmailCommand sendEmailCommand) {
         sendEmail(sendEmailCommand.getUser(), sendEmailCommand.getMessage() );
+        return null;
     }
 }
